@@ -49,8 +49,16 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Database/DatabaseHelper.swift,
+				MorakebLiquidityTests/MorakebLiquidityTests.swift,
 			);
 			target = 04D7C2452E390F0E00367F51 /* MorakebLiquidityUITests */;
+		};
+		04EB3CE02E6B82620028E3BF /* Exceptions for "MorakebLiquidityUITests" folder in "MorakebLiquidityTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MorakebLiquidityTests/MorakebLiquidityTests.swift,
+			);
+			target = 04D7C23B2E390F0E00367F51 /* MorakebLiquidityTests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -60,15 +68,11 @@
 			path = MorakebLiquidity;
 			sourceTree = "<group>";
 		};
-		04D7C23F2E390F0E00367F51 /* MorakebLiquidityTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MorakebLiquidityTests;
-			sourceTree = "<group>";
-		};
 		04D7C2492E390F0E00367F51 /* MorakebLiquidityUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				04D7C29E2E39142900367F51 /* Exceptions for "MorakebLiquidityUITests" folder in "MorakebLiquidity" target */,
+				04EB3CE02E6B82620028E3BF /* Exceptions for "MorakebLiquidityUITests" folder in "MorakebLiquidityTests" target */,
 				04D7C29F2E39142900367F51 /* Exceptions for "MorakebLiquidityUITests" folder in "MorakebLiquidityUITests" target */,
 			);
 			path = MorakebLiquidityUITests;
@@ -108,7 +112,6 @@
 				04D7C50E2E3AD46B00367F51 /* InteractiveScenariosView.swift */,
 				04D7C50A2E3AD33100367F51 /* AdvancedAnalyticsView.swift */,
 				04D7C2312E390F0C00367F51 /* MorakebLiquidity */,
-				04D7C23F2E390F0E00367F51 /* MorakebLiquidityTests */,
 				04D7C2492E390F0E00367F51 /* MorakebLiquidityUITests */,
 				04D7C2302E390F0C00367F51 /* Products */,
 			);
@@ -162,9 +165,6 @@
 			);
 			dependencies = (
 				04D7C23E2E390F0E00367F51 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				04D7C23F2E390F0E00367F51 /* MorakebLiquidityTests */,
 			);
 			name = MorakebLiquidityTests;
 			packageProductDependencies = (
