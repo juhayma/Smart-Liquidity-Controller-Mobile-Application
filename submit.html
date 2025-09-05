@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="submit.title">Submit Startup - EXIT Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" data-i18n="home.title">EXIT Platform</a></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="index.html#startups" class="nav-link" data-i18n="nav.startups">Startups</a>
+                <a href="index.html#founders" class="nav-link" data-i18n="nav.founders">Founders</a>
+                <a href="events.html" class="nav-link" data-i18n="nav.events">Events</a>
+                <a href="program.html" class="nav-link" data-i18n="nav.program">Program</a>
+                <a href="admin.html" class="nav-link" data-i18n="nav.admin">Admin</a>
+                <button class="language-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span class="current-lang">English</span>
+                    <span>/</span>
+                    <span class="other-lang">العربية</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Notice -->
+    <div class="demo-notice">
+        <div class="container">
+            <p><i class="fas fa-info-circle"></i> <span data-i18n="common.demo_notice">This is a demo version with sample data. Real data will be added soon.</span></p>
+        </div>
+    </div>
+
+    <!-- Submission Form -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-header">
+                <h1 data-i18n="submit.title">Submit Your Startup</h1>
+                <p data-i18n="submit.subtitle">Join the EXIT ecosystem and accelerate your startup journey</p>
+            </div>
+
+            <div class="form-container">
+                <form id="submissionForm" class="startup-form">
+                    <div class="form-group">
+                        <label for="company_name">
+                            <i class="fas fa-building"></i>
+                            <span data-i18n="submit.company_name">Company Name</span> *
+                        </label>
+                        <input type="text" id="company_name" name="company_name" required 
+                               data-i18n-placeholder="submit.company_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">
+                            <i class="fas fa-align-left"></i>
+                            <span data-i18n="submit.description">Description</span> *
+                        </label>
+                        <textarea id="description" name="description" rows="4" 
+                                  data-i18n-placeholder="submit.description_placeholder" 
+                                  placeholder="Describe your startup, what problem you solve, and your solution..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sector">
+                                <i class="fas fa-tags"></i>
+                                <span data-i18n="submit.sector">Sector</span> *
+                            </label>
+                            <select id="sector" name="sector" required>
+                                <option value="" data-i18n="submit.select_sector">Select Sector</option>
+                                <option value="fintech" data-i18n="sectors.fintech">FinTech</option>
+                                <option value="healthtech" data-i18n="sectors.healthtech">HealthTech</option>
+                                <option value="edtech" data-i18n="sectors.edtech">EdTech</option>
+                                <option value="ecommerce" data-i18n="sectors.ecommerce">E-commerce</option>
+                                <option value="logistics" data-i18n="sectors.logistics">Logistics</option>
+                                <option value="foodtech" data-i18n="sectors.foodtech">FoodTech</option>
+                                <option value="proptech" data-i18n="sectors.proptech">PropTech</option>
+                                <option value="ai" data-i18n="sectors.ai">AI/ML</option>
+                                <option value="iot" data-i18n="sectors.iot">IoT</option>
+                                <option value="other" data-i18n="sectors.other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stage">
+                                <i class="fas fa-chart-line"></i>
+                                <span data-i18n="submit.stage">Stage</span> *
+                            </label>
+                            <select id="stage" name="stage" required>
+                                <option value="" data-i18n="submit.select_stage">Select Stage</option>
+                                <option value="idea" data-i18n="stages.idea">Idea</option>
+                                <option value="prototype" data-i18n="stages.prototype">Prototype</option>
+                                <option value="mvp" data-i18n="stages.mvp">MVP</option>
+                                <option value="early-revenue" data-i18n="stages.early_revenue">Early Revenue</option>
+                                <option value="growth" data-i18n="stages.growth">Growth</option>
+                                <option value="scale" data-i18n="stages.scale">Scale</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">
+                                <i class="fas fa-globe"></i>
+                                <span data-i18n="submit.country">Country</span> *
+                            </label>
+                            <select id="country" name="country" required>
+                                <option value="" data-i18n="submit.select_country">Select Country</option>
+                                <option value="saudi-arabia" data-i18n="countries.saudi_arabia">Saudi Arabia</option>
+                                <option value="uae" data-i18n="countries.uae">UAE</option>
+                                <option value="kuwait" data-i18n="countries.kuwait">Kuwait</option>
+                                <option value="qatar" data-i18n="countries.qatar">Qatar</option>
+                                <option value="bahrain" data-i18n="countries.bahrain">Bahrain</option>
+                                <option value="oman" data-i18n="countries.oman">Oman</option>
+                                <option value="egypt" data-i18n="countries.egypt">Egypt</option>
+                                <option value="jordan" data-i18n="countries.jordan">Jordan</option>
+                                <option value="lebanon" data-i18n="countries.lebanon">Lebanon</option>
+                                <option value="other" data-i18n="countries.other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website">
+                                <i class="fas fa-link"></i>
+                                <span data-i18n="submit.website">Website</span>
+                            </label>
+                            <input type="url" id="website" name="website" 
+                                   data-i18n-placeholder="submit.website_placeholder"
+                                   placeholder="https://yourcompany.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_email">
+                            <i class="fas fa-envelope"></i>
+                            <span data-i18n="submit.contact_email">Contact Email</span> *
+                        </label>
+                        <input type="email" id="contact_email" name="contact_email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="founder_name">
+                            <i class="fas fa-user"></i>
+                            <span data-i18n="submit.founder_name">Founder Name</span> *
+                        </label>
+                        <input type="text" id="founder_name" name="founder_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="founder_email">
+                            <i class="fas fa-user-tie"></i>
+                            <span data-i18n="submit.founder_email">Founder Email</span> *
+                        </label>
+                        <input type="email" id="founder_email" name="founder_email" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="submit.submit_btn">Submit Application</span>
+                        </button>
+                        <button type="reset" class="btn btn-secondary">
+                            <i class="fas fa-undo"></i>
+                            <span data-i18n="submit.reset_btn">Reset Form</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-content">
+                        <i class="fas fa-check-circle"></i>
+                        <h3 data-i18n="submit.success_title">Application Submitted Successfully!</h3>
+                        <p><span data-i18n="submit.reference_label">Your reference ID is:</span> <strong id="referenceId"></strong></p>
+                        <p data-i18n="submit.success_subtitle">We'll review your application and get back to you soon.</p>
+                        <button onclick="submitAnother()" class="btn btn-primary" data-i18n="submit.submit_another">Submit Another</button>
+                        <a href="index.html" class="btn btn-secondary" data-i18n="submit.back_home">Back to Home</a>
+                    </div>
+                </div>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    <div class="error-content">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3 data-i18n="submit.error_title">Submission Failed</h3>
+                        <p id="errorText" data-i18n="submit.error_subtitle">Something went wrong. Please try again.</p>
+                        <button onclick="hideError()" class="btn btn-primary" data-i18n="submit.try_again">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="i18n.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('submissionForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Validate form
+            if (!validateForm()) {
+                return;
+            }
+            
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                const response = await fetch('/api/submissions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    document.getElementById('referenceId').textContent = result.reference_id;
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.querySelector('.startup-form').style.display = 'none';
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('errorText').textContent = error.message;
+                document.getElementById('errorMessage').style.display = 'block';
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        function submitAnother() {
+            document.getElementById('successMessage').style.display = 'none';
+            document.querySelector('.startup-form').style.display = 'block';
+            document.getElementById('submissionForm').reset();
+        }
+        
+        function hideError() {
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+        
+        // Form validation
+        function validateForm() {
+            const companyName = document.getElementById('company_name').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const sector = document.getElementById('sector').value;
+            const stage = document.getElementById('stage').value;
+            const country = document.getElementById('country').value;
+            const contactEmail = document.getElementById('contact_email').value.trim();
+            const founderName = document.getElementById('founder_name').value.trim();
+            const founderEmail = document.getElementById('founder_email').value.trim();
+            const website = document.getElementById('website').value.trim();
+            
+            // Check required fields
+            if (!companyName || !description || !sector || !stage || !country || !contactEmail || !founderName || !founderEmail) {
+                showError('Please fill in all required fields');
+                return false;
+            }
+            
+            // Validate emails
+            if (!isValidEmail(contactEmail)) {
+                showError('Please enter a valid contact email');
+                return false;
+            }
+            
+            if (!isValidEmail(founderEmail)) {
+                showError('Please enter a valid founder email');
+                return false;
+            }
+            
+            // Validate website if provided
+            if (website && !isValidURL(website)) {
+                showError('Please enter a valid website URL (starting with http:// or https://)');
+                return false;
+            }
+            
+            // Check description length
+            if (description.length < 50) {
+                showError('Please provide a more detailed description (at least 50 characters)');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function isValidURL(url) {
+            try {
+                new URL(url);
+                return url.startsWith('http://') || url.startsWith('https://');
+            } catch {
+                return false;
+            }
+        }
+        
+        function showError(message) {
+            document.getElementById('errorText').textContent = message;
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-page-title="events.title">Events - EXIT Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" data-i18n="home.title">EXIT Platform</a></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="index.html#startups" class="nav-link" data-i18n="nav.startups">Startups</a>
+                <a href="index.html#founders" class="nav-link" data-i18n="nav.founders">Founders</a>
+                <a href="events.html" class="nav-link active" data-i18n="nav.events">Events</a>
+                <a href="program.html" class="nav-link" data-i18n="nav.program">Program</a>
+                <a href="submit.html" class="nav-link btn-primary" data-i18n="nav.submit">Submit Startup</a>
+                <a href="admin.html" class="nav-link" data-i18n="nav.admin">Admin</a>
+                <button class="language-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span class="current-lang">English</span>
+                    <span>/</span>
+                    <span class="other-lang">العربية</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Notice -->
+    <div class="demo-notice">
+        <div class="container">
+            <p><i class="fas fa-info-circle"></i> <span data-i18n="common.demo_notice">This is a demo version with sample data. Real data will be added soon.</span></p>
+        </div>
+    </div>
+
+    <!-- Events Header -->
+    <section class="events-header">
+        <div class="container">
+            <h1><i class="fas fa-calendar-alt"></i> <span data-i18n="events.title">Upcoming Events</span></h1>
+            <p data-i18n="events.subtitle">Join our startup community events, workshops, and networking sessions</p>
+        </div>
+    </section>
+
+    <!-- Events Filter -->
+    <section class="events-filter">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterEvents('all')" data-i18n="events.all_events">All Events</button>
+                <button class="filter-btn" onclick="filterEvents('upcoming')" data-i18n="events.upcoming">Upcoming</button>
+                <button class="filter-btn" onclick="filterEvents('online')" data-i18n="events.online">Online</button>
+                <button class="filter-btn" onclick="filterEvents('offline')" data-i18n="events.in_person">In-Person</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List -->
+    <section class="events-section">
+        <div class="container">
+            <div id="eventsContainer" class="events-grid">
+                <div class="loading" data-i18n="common.loading">Loading events...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-ticket-alt"></i> <span data-i18n="events.rsvp_title">RSVP for Event</span></h3>
+                <span class="close" onclick="closeRSVPModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="event-details">
+                    <h4 id="modalEventTitle">Event Title</h4>
+                    <p><i class="fas fa-calendar"></i> <span id="modalEventDate">Date</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="modalEventVenue">Venue</span></p>
+                </div>
+                
+                <form id="rsvpForm" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="attendeeName">
+                            <i class="fas fa-user"></i> <span data-i18n="events.full_name">Full Name</span> *
+                        </label>
+                        <input type="text" id="attendeeName" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attendeeEmail">
+                            <i class="fas fa-envelope"></i> <span data-i18n="submit.contact_email">Email</span> *
+                        </label>
+                        <input type="email" id="attendeeEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attendeePhone">
+                            <i class="fas fa-phone"></i> <span data-i18n="events.phone_number">Phone Number</span>
+                        </label>
+                        <input type="tel" id="attendeePhone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attendeeCompany">
+                            <i class="fas fa-building"></i> <span data-i18n="events.company_startup">Company/Startup</span>
+                        </label>
+                        <input type="text" id="attendeeCompany" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attendeeRole">
+                            <i class="fas fa-briefcase"></i> <span data-i18n="events.role">Role</span>
+                        </label>
+                        <select id="attendeeRole" name="role">
+                            <option value="" data-i18n="events.select_role">Select Role</option>
+                            <option value="founder" data-i18n="events.founder">Founder</option>
+                            <option value="entrepreneur" data-i18n="events.entrepreneur">Entrepreneur</option>
+                            <option value="investor" data-i18n="events.investor">Investor</option>
+                            <option value="mentor" data-i18n="events.mentor">Mentor</option>
+                            <option value="student" data-i18n="events.student">Student</option>
+                            <option value="professional" data-i18n="events.professional">Professional</option>
+                            <option value="other" data-i18n="sectors.other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span data-i18n="events.agree_terms">I agree to the event terms and conditions</span>
+                        </label>
+                    </div>
+                    
+                    <input type="hidden" id="eventId" name="eventId">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button onclick="submitRSVP()" class="btn btn-primary">
+                    <i class="fas fa-check"></i> <span data-i18n="events.confirm_rsvp">Confirm RSVP</span>
+                </button>
+                <button onclick="closeRSVPModal()" class="btn btn-secondary" data-i18n="common.cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RSVP Success Modal -->
+    <div id="rsvpSuccessModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> <span data-i18n="events.rsvp_confirmed">RSVP Confirmed!</span></h3>
+                <span class="close" onclick="closeSuccessModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                        <p>QR Code</p>
+                        <small data-i18n="events.show_at_event">Show this at the event</small>
+                    </div>
+                    <div class="rsvp-details">
+                        <h4 data-i18n="events.event_details">Event Details</h4>
+                        <p><strong data-i18n="nav.events">Event:</strong> <span id="confirmedEventTitle">Event Name</span></p>
+                        <p><strong data-i18n="events.date">Date:</strong> <span id="confirmedEventDate">Date</span></p>
+                        <p><strong data-i18n="events.venue">Venue:</strong> <span id="confirmedEventVenue">Venue</span></p>
+                        <p><strong data-i18n="events.reference">Reference:</strong> <span id="rsvpReference">REF-12345</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="downloadTicket()" class="btn btn-primary">
+                    <i class="fas fa-download"></i> <span data-i18n="events.download_ticket">Download Ticket</span>
+                </button>
+                <button onclick="closeSuccessModal()" class="btn btn-secondary" data-i18n="common.close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script>
+        let currentEventId = null;
+        let eventsData = [];
+
+        // Load events on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEvents();
+        });
+
+        // Load events from API
+        async function loadEvents() {
+            try {
+                const response = await fetch('/api/events');
+                const result = await response.json();
+                
+                if (result.success) {
+                    eventsData = result.data;
+                    displayEvents(eventsData);
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('Error loading events:', error);
+                document.getElementById('eventsContainer').innerHTML = `
+                    <div class="error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Error loading events. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Display events
+        function displayEvents(events) {
+            const container = document.getElementById('eventsContainer');
+            
+            if (events.length === 0) {
+                container.innerHTML = `
+                    <div class="no-data">
+                        <i class="fas fa-calendar-times" style="font-size: 3rem; color: var(--secondary-color); margin-bottom: 1rem;"></i>
+                        <p>No events available at the moment.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const eventsHTML = events.map(event => {
+                const eventDate = new Date(event.start_at);
+                const isUpcoming = eventDate > new Date();
+                const eventStatus = isUpcoming ? 'upcoming' : 'past';
+                const currentLang = window.i18n ? i18n.getCurrentLanguage() : 'en';
+                
+                return `
+                    <div class="event-card ${eventStatus}" data-type="${event.is_online ? 'online' : 'offline'}">
+                        <div class="event-status">
+                            <span class="status-badge ${eventStatus}">
+                                ${isUpcoming ? 'Upcoming' : 'Past Event'}
+                            </span>
+                            <span class="event-type ${event.is_online ? 'online' : 'offline'}">
+                                <i class="fas fa-${event.is_online ? 'video' : 'map-marker-alt'}"></i>
+                                ${event.is_online ? 'Online' : 'In-Person'}
+                            </span>
+                        </div>
+                        
+                        <div class="event-content">
+                            <h3>${escapeHtml(event.title)}</h3>
+                            <div class="event-meta">
+                                <p><i class="fas fa-calendar"></i> ${eventDate.toLocaleDateString(currentLang === 'ar' ? 'ar-SA' : 'en-US', {
+                                    weekday: 'long',
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                })}</p>
+                                <p><i class="fas fa-clock"></i> ${eventDate.toLocaleTimeString(currentLang === 'ar' ? 'ar-SA' : 'en-US', {
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                })}</p>
+                                <p><i class="fas fa-map-marker-alt"></i> ${escapeHtml(event.venue)}</p>
+                                ${event.program_name ? `<p><i class="fas fa-graduation-cap"></i> ${escapeHtml(event.program_name)}</p>` : ''}
+                            </div>
+                        </div>
+                        
+                        <div class="event-actions">
+                            ${isUpcoming ? `
+                                <button onclick="openRSVPModal(${event.id}, '${escapeQuotes(event.title)}', '${eventDate.toISOString()}', '${escapeQuotes(event.venue)}')" 
+                                        class="btn btn-primary">
+                                    <i class="fas fa-ticket-alt"></i> RSVP
+                                </button>
+                            ` : `
+                                <button class="btn btn-secondary" disabled>
+                                    <i class="fas fa-history"></i> Event Ended
+                                </button>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = eventsHTML;
+        }
+
+        // Utility functions
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+
+        function escapeQuotes(text) {
+            return text.replace(/'/g, "\\'").replace(/"/g, '\\"');
+        }
+
+        // Filter events
+        function filterEvents(type) {
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`button[onclick="filterEvents('${type}')"]`).classList.add('active');
+            
+            let filteredEvents = eventsData;
+            const now = new Date();
+            
+            switch(type) {
+                case 'upcoming':
+                    filteredEvents = eventsData.filter(event => new Date(event.start_at) > now);
+                    break;
+                case 'online':
+                    filteredEvents = eventsData.filter(event => event.is_online);
+                    break;
+                case 'offline':
+                    filteredEvents = eventsData.filter(event => !event.is_online);
+                    break;
+                default:
+                    filteredEvents = eventsData;
+            }
+            
+            displayEvents(filteredEvents);
+        }
+
+        // Open RSVP Modal
+        function openRSVPModal(eventId, title, date, venue) {
+            try {
+                currentEventId = eventId;
+                
+                document.getElementById('modalEventTitle').textContent = title;
+                document.getElementById('modalEventDate').textContent = new Date(date).toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                document.getElementById('modalEventVenue').textContent = venue;
+                document.getElementById('eventId').value = eventId;
+                
+                document.getElementById('rsvpModal').style.display = 'block';
+            } catch (error) {
+                console.error('Error opening RSVP modal:', error);
+            }
+        }
+
+        // Close RSVP Modal
+        function closeRSVPModal() {
+            document.getElementById('rsvpModal').style.display = 'none';
+            document.getElementById('rsvpForm').reset();
+            currentEventId = null;
+        }
+
+        // Submit RSVP
+        async function submitRSVP() {
+            const form = document.getElementById('rsvpForm');
+            const formData = new FormData(form);
+            
+            // Validate required fields
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const terms = document.getElementById('agreeTerms').checked;
+            
+            if (!name || !email || !terms) {
+                alert('Please fill in all required fields and agree to the terms.');
+                return;
+            }
+            
+            const submitBtn = document.querySelector('#rsvpModal .btn-primary');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Simulate API call (replace with actual API)
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Generate reference ID
+                const referenceId = 'RSV-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase();
+                
+                // Show success modal
+                showRSVPSuccess(referenceId);
+                closeRSVPModal();
+                
+            } catch (error) {
+                console.error('Error submitting RSVP:', error);
+                alert('Error submitting RSVP. Please try again.');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Show RSVP success
+        function showRSVPSuccess(referenceId) {
+            const event = eventsData.find(e => e.id == currentEventId);
+            
+            if (event) {
+                document.getElementById('confirmedEventTitle').textContent = event.title;
+                document.getElementById('confirmedEventDate').textContent = new Date(event.start_at).toLocaleDateString('en-US');
+                document.getElementById('confirmedEventVenue').textContent = event.venue;
+                document.getElementById('rsvpReference').textContent = referenceId;
+                
+                document.getElementById('rsvpSuccessModal').style.display = 'block';
+            }
+        }
+
+        // Close success modal
+        function closeSuccessModal() {
+            document.getElementById('rsvpSuccessModal').style.display = 'none';
+        }
+
+        // Download ticket (placeholder)
+        function downloadTicket() {
+            alert('Ticket download feature coming soon!');
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const rsvpModal = document.getElementById('rsvpModal');
+            const successModal = document.getElementById('rsvpSuccessModal');
+            
+            if (event.target === rsvpModal) {
+                closeRSVPModal();
+            }
+            if (event.target === successModal) {
+                closeSuccessModal();
+            }
+        }
+    </script>
+</body>
+</html>

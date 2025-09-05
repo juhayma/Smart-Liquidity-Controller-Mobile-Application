@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-page-title="home.title">EXIT Platform - Startup Ecosystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2 data-i18n="home.title">EXIT Platform</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="#startups" class="nav-link" data-i18n="nav.startups">Startups</a>
+                <a href="#founders" class="nav-link" data-i18n="nav.founders">Founders</a>
+                <a href="events.html" class="nav-link" data-i18n="nav.events">Events</a>
+                <a href="program.html" class="nav-link" data-i18n="nav.program">Program</a>
+                <a href="submit.html" class="nav-link btn-primary" data-i18n="nav.submit">Submit Startup</a>
+                <a href="admin.html" class="nav-link" data-i18n="nav.admin">Admin</a>
+                <button class="language-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span class="current-lang">English</span>
+                    <span>/</span>
+                    <span class="other-lang">العربية</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Notice -->
+    <div class="demo-notice">
+        <div class="container">
+            <p><i class="fas fa-info-circle"></i> <span data-i18n="common.demo_notice">This is a demo version with sample data. Real data will be added soon.</span></p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-i18n="home.hero_title">Welcome to EXIT Platform</h1>
+                <p data-i18n="home.hero_subtitle">Your gateway to the startup ecosystem. Connect, grow, and succeed with the EXIT incubator program.</p>
+                <div class="hero-buttons">
+                    <a href="submit.html" class="btn btn-primary" data-i18n="home.submit_btn">Submit Your Startup</a>
+                    <a href="#startups" class="btn btn-secondary" data-i18n="home.explore_btn">Explore Startups</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2 data-i18n="home.stats_title">Platform Statistics</h2>
+            <div class="stats-grid" id="statsContainer">
+                <div class="stat-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3 id="totalStartups">-</h3>
+                    <p data-i18n="nav.startups">Startups</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3 id="totalFounders">-</h3>
+                    <p data-i18n="nav.founders">Founders</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar"></i>
+                    <h3 id="upcomingEvents">-</h3>
+                    <p data-i18n="events.upcoming">Upcoming Events</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 id="pastEvents">-</h3>
+                    <p>Past Events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startups Section -->
+    <section id="startups" class="startups">
+        <div class="container">
+            <h2 data-i18n="home.featured_startups">Featured Startups</h2>
+            <div class="startups-grid" id="startupsContainer">
+                <div class="loading" data-i18n="common.loading">Loading startups...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section id="founders" class="founders">
+        <div class="container">
+            <h2 data-i18n="home.our_founders">Our Founders</h2>
+            <div class="founders-grid" id="foundersContainer">
+                <div class="loading" data-i18n="common.loading">Loading founders...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-i18n="home.ready_to_join">Ready to Join EXIT?</h2>
+                <p data-i18n="home.join_subtitle">Submit your startup application and become part of our growing ecosystem</p>
+                <a href="submit.html" class="btn btn-primary" data-i18n="home.get_started">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="home.title">EXIT Platform</h3>
+                    <p data-i18n="footer.description">Empowering startups to succeed</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.quick_links">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                        <li><a href="#startups" data-i18n="nav.startups">Startups</a></li>
+                        <li><a href="#founders" data-i18n="nav.founders">Founders</a></li>
+                        <li><a href="events.html" data-i18n="nav.events">Events</a></li>
+                        <li><a href="submit.html" data-i18n="nav.submit">Submit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.contact">Contact</h4>
+                    <p data-i18n="footer.email">Email: info@exitplatform.com</p>
+                    <p data-i18n="footer.phone">Phone: +966 XX XXX XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 EXIT Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

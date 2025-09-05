@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - EXIT Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">EXIT Platform</a></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="submit.html" class="nav-link">Submit Startup</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="program.html" class="nav-link">Program</a>
+                <span class="nav-link active">Admin Dashboard</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard -->
+    <section class="admin-dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
+                <p>Manage startup submissions and platform data</p>
+            </div>
+
+            <!-- Dashboard Tabs -->
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" onclick="showTab('submissions')">
+                    <i class="fas fa-inbox"></i> Submissions
+                </button>
+                <button class="tab-btn" onclick="showTab('startups')">
+                    <i class="fas fa-rocket"></i> Startups
+                </button>
+                <button class="tab-btn" onclick="showTab('founders')">
+                    <i class="fas fa-users"></i> Founders
+                </button>
+                <button class="tab-btn" onclick="showTab('stats')">
+                    <i class="fas fa-chart-bar"></i> Statistics
+                </button>
+            </div>
+
+            <!-- Submissions Tab -->
+            <div id="submissions" class="tab-content active">
+                <div class="tab-header">
+                    <h2>Startup Submissions</h2>
+                    <button onclick="refreshSubmissions()" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                
+                <div class="submissions-container">
+                    <div id="submissionsTable" class="table-container">
+                        <div class="loading">Loading submissions...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Startups Tab -->
+            <div id="startups" class="tab-content">
+                <div class="tab-header">
+                    <h2>Approved Startups</h2>
+                    <button onclick="refreshStartups()" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                
+                <div id="startupsTable" class="table-container">
+                    <div class="loading">Loading startups...</div>
+                </div>
+            </div>
+
+            <!-- Founders Tab -->
+            <div id="founders" class="tab-content">
+                <div class="tab-header">
+                    <h2>Platform Founders</h2>
+                    <button onclick="refreshFounders()" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                
+                <div id="foundersTable" class="table-container">
+                    <div class="loading">Loading founders...</div>
+                </div>
+            </div>
+
+            <!-- Statistics Tab -->
+            <div id="stats" class="tab-content">
+                <div class="tab-header">
+                    <h2>Platform Statistics</h2>
+                    <button onclick="refreshStats()" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card big">
+                        <i class="fas fa-rocket"></i>
+                        <h3 id="adminTotalStartups">-</h3>
+                        <p>Total Startups</p>
+                    </div>
+                    <div class="stat-card big">
+                        <i class="fas fa-users"></i>
+                        <h3 id="adminTotalFounders">-</h3>
+                        <p>Total Founders</p>
+                    </div>
+                    <div class="stat-card big">
+                        <i class="fas fa-calendar"></i>
+                        <h3 id="adminUpcomingEvents">-</h3>
+                        <p>Upcoming Events</p>
+                    </div>
+                    <div class="stat-card big">
+                        <i class="fas fa-chart-line"></i>
+                        <h3 id="adminPastEvents">-</h3>
+                        <p>Past Events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Status Update Modal -->
+    <div id="statusModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Update Submission Status</h3>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Submission: <strong id="modalCompanyName"></strong></p>
+                <div class="form-group">
+                    <label for="newStatus">New Status:</label>
+                    <select id="newStatus">
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="updateStatus()" class="btn btn-primary">Update Status</button>
+                <button onclick="closeModal()" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSubmissionId = null;
+
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            
+            // Load data for the selected tab
+            switch(tabName) {
+                case 'submissions':
+                    loadSubmissions();
+                    break;
+                case 'startups':
+                    loadStartups();
+                    break;
+                case 'founders':
+                    loadFounders();
+                    break;
+                case 'stats':
+                    loadStats();
+                    break;
+            }
+        }
+
+        // Load submissions
+        async function loadSubmissions() {
+            try {
+                const response = await fetch('/api/submissions');
+                const result = await response.json();
+                
+                if (result.success) {
+                    displaySubmissions(result.data);
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('Error loading submissions:', error);
+                document.getElementById('submissionsTable').innerHTML = 
+                    '<div class="error">Error loading submissions</div>';
+            }
+        }
+
+        function displaySubmissions(submissions) {
+            const container = document.getElementById('submissionsTable');
+            
+            if (submissions.length === 0) {
+                container.innerHTML = '<div class="no-data">No submissions found</div>';
+                return;
+            }
+            
+            const table = `
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Reference ID</th>
+                            <th>Company</th>
+                            <th>Sector</th>
+                            <th>Stage</th>
+                            <th>Contact</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${submissions.map(sub => `
+                            <tr>
+                                <td><code>${sub.reference_id}</code></td>
+                                <td><strong>${sub.company_name}</strong></td>
+                                <td><span class="badge">${sub.sector}</span></td>
+                                <td><span class="badge stage">${sub.stage}</span></td>
+                                <td>${sub.contact_email}</td>
+                                <td><span class="status status-${sub.status}">${sub.status}</span></td>
+                                <td>${new Date(sub.created_at).toLocaleDateString()}</td>
+                                <td>
+                                    <button onclick="openStatusModal(${sub.id}, '${sub.company_name}', '${sub.status}')" 
+                                            class="btn btn-sm btn-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = table;
+        }
+
+        // Load startups
+        async function loadStartups() {
+            try {
+                const response = await fetch('/api/startups');
+                const result = await response.json();
+                
+                if (result.success) {
+                    displayStartups(result.data);
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('Error loading startups:', error);
+                document.getElementById('startupsTable').innerHTML = 
+                    '<div class="error">Error loading startups</div>';
+            }
+        }
+
+        function displayStartups(startups) {
+            const container = document.getElementById('startupsTable');
+            
+            if (startups.length === 0) {
+                container.innerHTML = '<div class="no-data">No approved startups found</div>';
+                return;
+            }
+            
+            const table = `
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Sector</th>
+                            <th>Stage</th>
+                            <th>Country</th>
+                            <th>Founders</th>
+                            <th>Website</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${startups.map(startup => `
+                            <tr>
+                                <td><strong>${startup.name}</strong></td>
+                                <td><span class="badge">${startup.sector || 'N/A'}</span></td>
+                                <td><span class="badge stage">${startup.stage || 'N/A'}</span></td>
+                                <td>${startup.country || 'N/A'}</td>
+                                <td>${startup.founder_count || 0}</td>
+                                <td>
+                                    ${startup.website ? 
+                                        `<a href="${startup.website}" target="_blank"><i class="fas fa-external-link-alt"></i></a>` 
+                                        : 'N/A'}
+                                </td>
+                                <td>${new Date(startup.created_at).toLocaleDateString()}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = table;
+        }
+
+        // Load founders
+        async function loadFounders() {
+            try {
+                const response = await fetch('/api/founders');
+                const result = await response.json();
+                
+                if (result.success) {
+                    displayFounders(result.data);
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('Error loading founders:', error);
+                document.getElementById('foundersTable').innerHTML = 
+                    '<div class="error">Error loading founders</div>';
+            }
+        }
+
+        function displayFounders(founders) {
+            const container = document.getElementById('foundersTable');
+            
+            if (founders.length === 0) {
+                container.innerHTML = '<div class="no-data">No founders found</div>';
+                return;
+            }
+            
+            const table = `
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Title</th>
+                            <th>Startups</th>
+                            <th>LinkedIn</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${founders.map(founder => `
+                            <tr>
+                                <td><strong>${founder.full_name}</strong></td>
+                                <td>${founder.email || 'N/A'}</td>
+                                <td>${founder.title || 'N/A'}</td>
+                                <td>${founder.startup_count || 0}</td>
+                                <td>
+                                    ${founder.linkedin_url ? 
+                                        `<a href="${founder.linkedin_url}" target="_blank"><i class="fab fa-linkedin"></i></a>` 
+                                        : 'N/A'}
+                                </td>
+                                <td>${new Date(founder.created_at).toLocaleDateString()}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = table;
+        }
+
+        // Load statistics
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/stats');
+                const result = await response.json();
+                
+                if (result.success) {
+                    const stats = result.data;
+                    document.getElementById('adminTotalStartups').textContent = stats.total_startups || 0;
+                    document.getElementById('adminTotalFounders').textContent = stats.total_founders || 0;
+                    document.getElementById('adminUpcomingEvents').textContent = stats.upcoming_events || 0;
+                    document.getElementById('adminPastEvents').textContent = stats.past_events || 0;
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        // Modal functions
+        function openStatusModal(id, companyName, currentStatus) {
+            currentSubmissionId = id;
+            document.getElementById('modalCompanyName').textContent = companyName;
+            document.getElementById('newStatus').value = currentStatus;
+            document.getElementById('statusModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('statusModal').style.display = 'none';
+            currentSubmissionId = null;
+        }
+
+        async function updateStatus() {
+            const newStatus = document.getElementById('newStatus').value;
+            
+            try {
+                const response = await fetch(`/api/submissions/${currentSubmissionId}/status`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ status: newStatus })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    closeModal();
+                    loadSubmissions(); // Refresh the table
+                    alert('Status updated successfully!');
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('Error updating status:', error);
+                alert('Error updating status: ' + error.message);
+            }
+        }
+
+        // Refresh functions
+        function refreshSubmissions() {
+            loadSubmissions();
+        }
+
+        function refreshStartups() {
+            loadStartups();
+        }
+
+        function refreshFounders() {
+            loadFounders();
+        }
+
+        function refreshStats() {
+            loadStats();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSubmissions(); // Load default tab
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('statusModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

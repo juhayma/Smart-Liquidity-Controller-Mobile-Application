@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-page-title="program.title">EXIT Program Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" data-i18n="home.title">EXIT Platform</a></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="events.html" class="nav-link" data-i18n="nav.events">Events</a>
+                <a href="submit.html" class="nav-link" data-i18n="nav.submit">Submit Startup</a>
+                <a href="admin.html" class="nav-link" data-i18n="nav.admin">Admin</a>
+                <span class="nav-link active" data-i18n="nav.program">Program Dashboard</span>
+                <button class="language-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span class="current-lang">English</span>
+                    <span>/</span>
+                    <span class="other-lang">العربية</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Notice -->
+    <div class="demo-notice">
+        <div class="container">
+            <p><i class="fas fa-info-circle"></i> <span data-i18n="program.demo_notice">This is a demo version. Login system will be implemented with real data.</span></p>
+        </div>
+    </div>
+
+    <!-- Program Header -->
+    <section class="program-header">
+        <div class="container">
+            <div class="program-intro">
+                <h1><i class="fas fa-graduation-cap"></i> <span data-i18n="program.title">EXIT Program Dashboard</span></h1>
+                <p data-i18n="program.subtitle">Welcome to your startup journey with EXIT Incubator</p>
+            </div>
+            <div class="startup-info">
+                <h3>TechFlow Solutions</h3>
+                <div class="startup-meta">
+                    <span class="badge" data-i18n="sectors.fintech">FinTech</span>
+                    <span class="badge stage" data-i18n="stages.mvp">MVP Stage</span>
+                    <span class="badge program">EXIT Incubator</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Overview -->
+    <section class="progress-overview">
+        <div class="container">
+            <h2 data-i18n="program.progress_title">Program Progress</h2>
+            <div class="progress-timeline">
+                <div class="milestone completed">
+                    <div class="milestone-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <h4 data-i18n="program.onboarding">Onboarding</h4>
+                        <p data-i18n="program.onboarding_desc">Program orientation completed</p>
+                        <small><span data-i18n="program.completed">Completed:</span> Aug 5, 2025</small>
+                    </div>
+                </div>
+                
+                <div class="milestone active">
+                    <div class="milestone-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <h4 data-i18n="program.business_model">Business Model</h4>
+                        <p data-i18n="program.business_model_desc">Develop and refine your business model</p>
+                        <small><span data-i18n="program.due">Due:</span> Aug 30, 2025</small>
+                    </div>
+                </div>
+                
+                <div class="milestone pending">
+                    <div class="milestone-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <h4 data-i18n="program.team_building">Team Building</h4>
+                        <p data-i18n="program.team_building_desc">Build and structure your team</p>
+                        <small><span data-i18n="program.starts">Starts:</span> Sep 1, 2025</small>
+                    </div>
+                </div>
+                
+                <div class="milestone pending">
+                    <div class="milestone-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <h4 data-i18n="program.market_validation">Market Validation</h4>
+                        <p data-i18n="program.market_validation_desc">Test and validate your market fit</p>
+                        <small><span data-i18n="program.starts">Starts:</span> Sep 15, 2025</small>
+                    </div>
+                </div>
+                
+                <div class="milestone pending">
+                    <div class="milestone-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <h4 data-i18n="program.demo_day">Demo Day</h4>
+                        <p data-i18n="program.demo_day_desc">Present your startup to investors</p>
+                        <small><span data-i18n="program.target">Target:</span> Oct 15, 2025</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Tabs -->
+    <section class="program-dashboard">
+        <div class="container">
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" onclick="showTab('deliverables')">
+                    <i class="fas fa-tasks"></i> <span data-i18n="program.deliverables">Deliverables</span>
+                </button>
+                <button class="tab-btn" onclick="showTab('services')">
+                    <i class="fas fa-handshake"></i> <span data-i18n="program.services">Services</span>
+                </button>
+                <button class="tab-btn" onclick="showTab('documents')">
+                    <i class="fas fa-folder"></i> <span data-i18n="program.documents">Documents</span>
+                </button>
+                <button class="tab-btn" onclick="showTab('mentorship')">
+                    <i class="fas fa-user-tie"></i> <span data-i18n="program.mentorship">Mentorship</span>
+                </button>
+                <button class="tab-btn" onclick="showTab('resources')">
+                    <i class="fas fa-book"></i> <span data-i18n="program.resources">Resources</span>
+                </button>
+            </div>
+
+            <!-- Deliverables Tab -->
+            <div id="deliverables" class="tab-content active">
+                <div class="tab-header">
+                    <h3 data-i18n="program.current_deliverables">Current Deliverables</h3>
+                    <div class="progress-stats">
+                        <span class="stat completed">3 <span data-i18n="program.completed">Completed</span></span>
+                        <span class="stat pending">2 <span data-i18n="program.pending">Pending</span></span>
+                        <span class="stat overdue">1 <span data-i18n="program.overdue">Overdue</span></span>
+                    </div>
+                </div>
+                
+                <div class="deliverables-grid">
+                    <div class="deliverable-card completed">
+                        <div class="deliverable-header">
+                            <h4 data-i18n="program.business_canvas">Business Model Canvas</h4>
+                            <span class="status completed">
+                                <i class="fas fa-check-circle"></i> <span data-i18n="program.completed">Completed</span>
+                            </span>
+                        </div>
+                        <p data-i18n="program.business_canvas_desc">Create a comprehensive business model canvas for your startup</p>
+                        <div class="deliverable-meta">
+                            <span><i class="fas fa-calendar"></i> <span data-i18n="program.due">Due:</span> Aug 10, 2025</span>
+                            <span><i class="fas fa-check"></i> <span data-i18n="program.submitted">Submitted:</span> Aug 8, 2025</span>
+                        </div>
+                        <div class="deliverable-actions">
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-eye"></i> <span data-i18n="program.view_submission">View Submission</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-card active">
+                        <div class="deliverable-header">
+                            <h4 data-i18n="program.market_research">Market Research Report</h4>
+                            <span class="status pending">
+                                <i class="fas fa-clock"></i> <span data-i18n="program.in_progress">In Progress</span>
+                            </span>
+                        </div>
+                        <p data-i18n="program.market_research_desc">Conduct market research and competitive analysis</p>
+                        <div class="deliverable-meta">
+                            <span><i class="fas fa-calendar"></i> <span data-i18n="program.due">Due:</span> Aug 25, 2025</span>
+                            <span><i class="fas fa-hourglass-half"></i> <span data-i18n="program.days_remaining">5 days remaining</span></span>
+                        </div>
+                        <div class="deliverable-actions">
+                            <button class="btn btn-sm btn-primary">
+                                <i class="fas fa-upload"></i> <span data-i18n="program.upload_document">Upload Document</span>
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-question-circle"></i> <span data-i18n="program.get_help">Get Help</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-card overdue">
+                        <div class="deliverable-header">
+                            <h4 data-i18n="program.financial_projections">Financial Projections</h4>
+                            <span class="status overdue">
+                                <i class="fas fa-exclamation-triangle"></i> <span data-i18n="program.overdue">Overdue</span>
+                            </span>
+                        </div>
+                        <p data-i18n="program.financial_projections_desc">Prepare 3-year financial projections and funding requirements</p>
+                        <div class="deliverable-meta">
+                            <span><i class="fas fa-calendar"></i> <span data-i18n="program.due">Due:</span> Aug 15, 2025</span>
+                            <span><i class="fas fa-exclamation"></i> <span data-i18n="program.days_overdue">3 days overdue</span></span>
+                        </div>
+                        <div class="deliverable-actions">
+                            <button class="btn btn-sm btn-warning">
+                                <i class="fas fa-upload"></i> <span data-i18n="program.upload_now">Upload Now</span>
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-calendar-plus"></i> <span data-i18n="program.request_extension">Request Extension</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Tab -->
+            <div id="services" class="tab-content">
+                <div class="tab-header">
+                    <h3 data-i18n="program.available_services">Available Services</h3>
+                    <p data-i18n="program.services_desc">Services provided by the EXIT program team</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card completed">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 data-i18n="program.branding_design">Branding & Design</h4>
+                            <p data-i18n="program.branding_design_desc">Logo design and brand identity creation</p>
+                            <div class="service-status">
+                                <span class="status completed" data-i18n="program.completed">Completed</span>
+                                <small><span data-i18n="program.delivered">Delivered:</span> Aug 12, 2025</small>
+                            </div>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-sm btn-secondary" data-i18n="program.view_assets">View Assets</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card active">
+                        <div class="service-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 data-i18n="program.pitch_preparation">Pitch Preparation</h4>
+                            <p data-i18n="program.pitch_preparation_desc">One-on-one pitch coaching and presentation skills</p>
+                            <div class="service-status">
+                                <span class="status active" data-i18n="program.in_progress">In Progress</span>
+                                <small><span data-i18n="program.next_session">Next session:</span> Aug 22, 2025</small>
+                            </div>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-sm btn-primary" data-i18n="program.schedule_session">Schedule Session</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card available">
+                        <div class="service-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 data-i18n="program.legal_consultation">Legal Consultation</h4>
+                            <p data-i18n="program.legal_consultation_desc">Legal advice on incorporation and contracts</p>
+                            <div class="service-status">
+                                <span class="status available" data-i18n="program.available">Available</span>
+                                <small data-i18n="program.book_when_ready">Book when ready</small>
+                            </div>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-sm btn-primary" data-i18n="program.request_service">Request Service</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card available">
+                        <div class="service-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 data-i18n="program.financial_modeling">Financial Modeling</h4>
+                            <p data-i18n="program.financial_modeling_desc">Help with financial projections and fundraising</p>
+                            <div class="service-status">
+                                <span class="status available" data-i18n="program.available">Available</span>
+                                <small data-i18n="program.book_when_ready">Book when ready</small>
+                            </div>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-sm btn-primary" data-i18n="program.request_service">Request Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Tab -->
+            <div id="documents" class="tab-content">
+                <div class="tab-header">
+                    <h3 data-i18n="program.document_library">Document Library</h3>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> <span data-i18n="program.upload_document">Upload Document</span>
+                    </button>
+                </div>
+                
+                <div class="documents-list">
+                    <div class="document-item">
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="document-info">
+                            <h4 data-i18n="program.business_plan">Business Plan v2.1</h4>
+                            <p data-i18n="program.business_plan_desc">Updated business plan with market analysis</p>
+                            <small><span data-i18n="program.uploaded">Uploaded:</span> Aug 15, 2025 • 2.3 MB</small>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-download"></i> <span data-i18n="common.download">Download</span>
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-eye"></i> <span data-i18n="program.preview">Preview</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="document-item">
+                        <div class="document-icon">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <div class="document-info">
+                            <h4 data-i18n="program.pitch_deck">Pitch Deck v1.0</h4>
+                            <p data-i18n="program.pitch_deck_desc">Investor presentation deck</p>
+                            <small><span data-i18n="program.uploaded">Uploaded:</span> Aug 10, 2025 • 4.7 MB</small>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-download"></i> <span data-i18n="common.download">Download</span>
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-eye"></i> <span data-i18n="program.preview">Preview</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mentorship Tab -->
+            <div id="mentorship" class="tab-content">
+                <div class="tab-header">
+                    <h3 data-i18n="program.your_mentors">Your Mentors</h3>
+                    <p data-i18n="program.mentors_desc">Connect with industry experts assigned to guide your journey</p>
+                </div>
+                
+                <div class="mentors-grid">
+                    <div class="mentor-card">
+                        <div class="mentor-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="mentor-info">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p data-i18n="program.fintech_expert">FinTech Expert & Former Goldman Sachs VP</p>
+                            <div class="mentor-meta">
+                                <span><i class="fas fa-clock"></i> <span data-i18n="program.sessions_completed">2 sessions completed</span></span>
+                                <span><i class="fas fa-calendar"></i> <span data-i18n="program.next">Next:</span> Aug 25, 2025</span>
+                            </div>
+                        </div>
+                        <div class="mentor-actions">
+                            <button class="btn btn-sm btn-primary" data-i18n="program.schedule_meeting">Schedule Meeting</button>
+                            <button class="btn btn-sm btn-secondary" data-i18n="program.send_message">Send Message</button>
+                        </div>
+                    </div>
+
+                    <div class="mentor-card">
+                        <div class="mentor-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="mentor-info">
+                            <h4>Ahmed Al-Rashid</h4>
+                            <p data-i18n="program.startup_founder">Startup Founder & Tech Entrepreneur</p>
+                            <div class="mentor-meta">
+                                <span><i class="fas fa-clock"></i> <span data-i18n="program.session_completed">1 session completed</span></span>
+                                <span><i class="fas fa-calendar"></i> <span data-i18n="program.available_on_demand">Available on demand</span></span>
+                            </div>
+                        </div>
+                        <div class="mentor-actions">
+                            <button class="btn btn-sm btn-primary" data-i18n="program.schedule_meeting">Schedule Meeting</button>
+                            <button class="btn btn-sm btn-secondary" data-i18n="program.send_message">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Tab -->
+            <div id="resources" class="tab-content">
+                <div class="tab-header">
+                    <h3 data-i18n="program.learning_resources">Learning Resources</h3>
+                    <p data-i18n="program.learning_resources_desc">Templates, guides, and educational materials</p>
+                </div>
+                
+                <div class="resources-categories">
+                    <div class="resource-category">
+                        <h4><i class="fas fa-chart-line"></i> <span data-i18n="program.business_planning">Business Planning</span></h4>
+                        <ul class="resource-list">
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> <span data-i18n="program.canvas_template">Business Model Canvas Template</span></a></li>
+                            <li><a href="#"><i class="fas fa-video"></i> <span data-i18n="program.planning_workshop">Business Planning Workshop</span></a></li>
+                            <li><a href="#"><i class="fas fa-link"></i> <span data-i18n="program.research_tools">Market Research Tools</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-category">
+                        <h4><i class="fas fa-money-bill-wave"></i> <span data-i18n="program.fundraising">Fundraising</span></h4>
+                        <ul class="resource-list">
+                            <li><a href="#"><i class="fas fa-file-excel"></i> <span data-i18n="program.financial_template">Financial Model Template</span></a></li>
+                            <li><a href="#"><i class="fas fa-video"></i> <span data-i18n="program.pitch_masterclass">Investor Pitch Masterclass</span></a></li>
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> <span data-i18n="program.term_sheet_guide">Term Sheet Guide</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-category">
+                        <h4><i class="fas fa-rocket"></i> <span data-i18n="program.product_development">Product Development</span></h4>
+                        <ul class="resource-list">
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> <span data-i18n="program.mvp_guide">MVP Development Guide</span></a></li>
+                            <li><a href="#"><i class="fas fa-video"></i> <span data-i18n="program.user_testing">User Testing Workshop</span></a></li>
+                            <li><a href="#"><i class="fas fa-link"></i> <span data-i18n="program.design_tools">Design Tools & Resources</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="i18n.js"></script>
+    <script src="i18n.js"></script>
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            document.querySelector(`button[onclick="showTab('${tabName}')"]`).classList.add('active');
+        }
+
+        // Placeholder functions for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners for buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                if (!btn.onclick && !btn.getAttribute('onclick')) {
+                    btn.addEventListener('click', function() {
+                        const action = this.textContent.trim();
+                        const currentLang = window.i18n ? i18n.getCurrentLanguage() : 'en';
+                        const message = currentLang === 'ar' ? 'الميزة قريباً!' : 'Feature coming soon!';
+                        alert(`${action} - ${message}`);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html><div class="deliverable-card completed">
+                        <div class="deliverable-header">
+                            <h4>Business Model Canvas</h4>
+                            <span class="status completed">
+                                <i class="fas fa-check-circle"></i> Completed
+                            </span>
+                        </div>
+                        <p>Create a comprehensive business model canvas for your startup</p>
+                        <div class="deliverable-meta">
+                            <span><i class="fas fa-calendar"></i> Due: Aug 10, 2025</span>
+                            <span><i class="fas fa-check"></i> Submitted: Aug 8, 2025</span>
+                        </div>
+                        <div class="deliverable-actions">
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-eye"></i> View Submission
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-card active">
+                        <div class="deliverable-header">
+                            <h4>Market Research Report</h4>
+                            <span class="status pending">
+                                <i class="fas fa-clock"></i> In Progress
+                            </span>
+                        </div>
+                        <p>Conduct market research and competitive analysis</p>
+                        <div class="deliverable-meta">
+                            <span><i class="fas fa-calendar"></i> Due: Aug 25, 2025</span>
+                            <span><i class="fas fa-hourglass-half"></i> 5 days remaining</span>
+                        </div>
+                        <div class="deliverable-actions">
+                            <button class="btn btn-sm btn-primary">
+                                <i class="fas fa-upload"></i> Upload Document
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-question-circle"></i> Get Help
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="deliverable-card overdue">
+                        <div class="deliverable-header">
+                            <h4>Financial Projections</h4>
+                            <span class="status overdue">
+                                <i class="fas fa-exclamation-triangle"></i> Overdue
+                            </span>
+                        </div>
+                        <p>Prepare 3-year financial projections and funding requirements</p>
+                        <div class="deliverable-meta">
+                            <span><i class="fas fa-calendar"></i> Due: Aug 15, 2025</span>
+                            <span><i class="fas fa-exclamation"></i> 3 days overdue</span>
+                        </div>
+                        <div class="deliverable-actions">
+                            <button class="btn btn-sm btn-warning">
+                                <i class="fas fa-upload"></i> Upload Now
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-calendar-plus"></i> Request Extension
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Tab -->
+            <div id="services" class="tab-content">
+                <div class="tab-header">
+                    <h3>Available Services</h3>
+                    <p>Services provided by the EXIT program team</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card completed">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Branding & Design</h4>
+                            <p>Logo design and brand identity creation</p>
+                            <div class="service-status">
+                                <span class="status completed">Completed</span>
+                                <small>Delivered: Aug 12, 2025</small>
+                            </div>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-sm btn-secondary">View Assets</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card active">
+                        <div class="service-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Pitch Preparation</h4>
+                            <p>One-on-one pitch coaching and presentation skills</p>
+                            <div class="service-status">
+                                <span class="status active">In Progress</span>
+                                <small>Next session: Aug 22, 2025</small>
+                            </div>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-sm btn-primary">Schedule Session</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card available">
+                        <div class="service-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Legal Consultation</h4>
+                            <p>Legal advice on incorporation and contracts</p>
+                            <div class="service-status">
+                                <span class="status available">Available</span>
+                                <small>Book when ready</small>
+                            </div>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-sm btn-primary">Request Service</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card available">
+                        <div class="service-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Financial Modeling</h4>
+                            <p>Help with financial projections and fundraising</p>
+                            <div class="service-status">
+                                <span class="status available">Available</span>
+                                <small>Book when ready</small>
+                            </div>
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn btn-sm btn-primary">Request Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Tab -->
+            <div id="documents" class="tab-content">
+                <div class="tab-header">
+                    <h3>Document Library</h3>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Upload Document
+                    </button>
+                </div>
+                
+                <div class="documents-list">
+                    <div class="document-item">
+                        <div class="document-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="document-info">
+                            <h4>Business Plan v2.1</h4>
+                            <p>Updated business plan with market analysis</p>
+                            <small>Uploaded: Aug 15, 2025 • 2.3 MB</small>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="document-item">
+                        <div class="document-icon">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <div class="document-info">
+                            <h4>Pitch Deck v1.0</h4>
+                            <p>Investor presentation deck</p>
+                            <small>Uploaded: Aug 10, 2025 • 4.7 MB</small>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-sm btn-secondary">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mentorship Tab -->
+            <div id="mentorship" class="tab-content">
+                <div class="tab-header">
+                    <h3>Your Mentors</h3>
+                    <p>Connect with industry experts assigned to guide your journey</p>
+                </div>
+                
+                <div class="mentors-grid">
+                    <div class="mentor-card">
+                        <div class="mentor-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="mentor-info">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p>FinTech Expert & Former Goldman Sachs VP</p>
+                            <div class="mentor-meta">
+                                <span><i class="fas fa-clock"></i> 2 sessions completed</span>
+                                <span><i class="fas fa-calendar"></i> Next: Aug 25, 2025</span>
+                            </div>
+                        </div>
+                        <div class="mentor-actions">
+                            <button class="btn btn-sm btn-primary">Schedule Meeting</button>
+                            <button class="btn btn-sm btn-secondary">Send Message</button>
+                        </div>
+                    </div>
+
+                    <div class="mentor-card">
+                        <div class="mentor-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="mentor-info">
+                            <h4>Ahmed Al-Rashid</h4>
+                            <p>Startup Founder & Tech Entrepreneur</p>
+                            <div class="mentor-meta">
+                                <span><i class="fas fa-clock"></i> 1 session completed</span>
+                                <span><i class="fas fa-calendar"></i> Available on demand</span>
+                            </div>
+                        </div>
+                        <div class="mentor-actions">
+                            <button class="btn btn-sm btn-primary">Schedule Meeting</button>
+                            <button class="btn btn-sm btn-secondary">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Tab -->
+            <div id="resources" class="tab-content">
+                <div class="tab-header">
+                    <h3>Learning Resources</h3>
+                    <p>Templates, guides, and educational materials</p>
+                </div>
+                
+                <div class="resources-categories">
+                    <div class="resource-category">
+                        <h4><i class="fas fa-chart-line"></i> Business Planning</h4>
+                        <ul class="resource-list">
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> Business Model Canvas Template</a></li>
+                            <li><a href="#"><i class="fas fa-video"></i> Business Planning Workshop</a></li>
+                            <li><a href="#"><i class="fas fa-link"></i> Market Research Tools</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-category">
+                        <h4><i class="fas fa-money-bill-wave"></i> Fundraising</h4>
+                        <ul class="resource-list">
+                            <li><a href="#"><i class="fas fa-file-excel"></i> Financial Model Template</a></li>
+                            <li><a href="#"><i class="fas fa-video"></i> Investor Pitch Masterclass</a></li>
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> Term Sheet Guide</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-category">
+                        <h4><i class="fas fa-rocket"></i> Product Development</h4>
+                        <ul class="resource-list">
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> MVP Development Guide</a></li>
+                            <li><a href="#"><i class="fas fa-video"></i> User Testing Workshop</a></li>
+                            <li><a href="#"><i class="fas fa-link"></i> Design Tools & Resources</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Placeholder functions for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners for buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                if (!btn.onclick) {
+                    btn.addEventListener('click', function() {
+                        const action = this.textContent.trim();
+                        alert(`${action} feature coming soon!`);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

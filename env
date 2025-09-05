@@ -1,0 +1,10 @@
+DATABASE_URL=postgres://exit_user:jojo123@localhost:5432/exit.db
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=exit.db
+DB_USER=exit_user
+DB_PASSWORD=jojo123
+
+PORT=3000
+NODE_ENV=development
