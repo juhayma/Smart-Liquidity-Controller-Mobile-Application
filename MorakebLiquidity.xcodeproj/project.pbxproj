@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04D7C2A62E391DCA00367F51 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 04D7C2A52E391DCA00367F51 /* SQLite */; };
+		04D7C50B2E3AD36300367F51 /* AdvancedAnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D7C50A2E3AD33100367F51 /* AdvancedAnalyticsView.swift */; };
+		04D7C50F2E3AD47100367F51 /* InteractiveScenariosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D7C50E2E3AD46B00367F51 /* InteractiveScenariosView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04D7C23D2E390F0E00367F51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7C2272E390F0C00367F51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7C22E2E390F0C00367F51;
+			remoteInfo = MorakebLiquidity;
+		};
+		04D7C2472E390F0E00367F51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7C2272E390F0C00367F51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7C22E2E390F0C00367F51;
+			remoteInfo = MorakebLiquidity;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04D7C22F2E390F0C00367F51 /* MorakebLiquidity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorakebLiquidity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D7C23C2E390F0E00367F51 /* MorakebLiquidityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorakebLiquidityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D7C2462E390F0E00367F51 /* MorakebLiquidityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorakebLiquidityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D7C50A2E3AD33100367F51 /* AdvancedAnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedAnalyticsView.swift; sourceTree = "<group>"; };
+		04D7C50E2E3AD46B00367F51 /* InteractiveScenariosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveScenariosView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		04D7C29E2E39142900367F51 /* Exceptions for "MorakebLiquidityUITests" folder in "MorakebLiquidity" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Database/DatabaseHelper.swift,
+			);
+			target = 04D7C22E2E390F0C00367F51 /* MorakebLiquidity */;
+		};
+		04D7C29F2E39142900367F51 /* Exceptions for "MorakebLiquidityUITests" folder in "MorakebLiquidityUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Database/DatabaseHelper.swift,
+			);
+			target = 04D7C2452E390F0E00367F51 /* MorakebLiquidityUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		04D7C2312E390F0C00367F51 /* MorakebLiquidity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MorakebLiquidity;
+			sourceTree = "<group>";
+		};
+		04D7C23F2E390F0E00367F51 /* MorakebLiquidityTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MorakebLiquidityTests;
+			sourceTree = "<group>";
+		};
+		04D7C2492E390F0E00367F51 /* MorakebLiquidityUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				04D7C29E2E39142900367F51 /* Exceptions for "MorakebLiquidityUITests" folder in "MorakebLiquidity" target */,
+				04D7C29F2E39142900367F51 /* Exceptions for "MorakebLiquidityUITests" folder in "MorakebLiquidityUITests" target */,
+			);
+			path = MorakebLiquidityUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04D7C22C2E390F0C00367F51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D7C2A62E391DCA00367F51 /* SQLite in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7C2392E390F0E00367F51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7C2432E390F0E00367F51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04D7C2262E390F0C00367F51 = {
+			isa = PBXGroup;
+			children = (
+				04D7C50E2E3AD46B00367F51 /* InteractiveScenariosView.swift */,
+				04D7C50A2E3AD33100367F51 /* AdvancedAnalyticsView.swift */,
+				04D7C2312E390F0C00367F51 /* MorakebLiquidity */,
+				04D7C23F2E390F0E00367F51 /* MorakebLiquidityTests */,
+				04D7C2492E390F0E00367F51 /* MorakebLiquidityUITests */,
+				04D7C2302E390F0C00367F51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04D7C2302E390F0C00367F51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04D7C22F2E390F0C00367F51 /* MorakebLiquidity.app */,
+				04D7C23C2E390F0E00367F51 /* MorakebLiquidityTests.xctest */,
+				04D7C2462E390F0E00367F51 /* MorakebLiquidityUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04D7C22E2E390F0C00367F51 /* MorakebLiquidity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D7C2502E390F0E00367F51 /* Build configuration list for PBXNativeTarget "MorakebLiquidity" */;
+			buildPhases = (
+				04D7C22B2E390F0C00367F51 /* Sources */,
+				04D7C22C2E390F0C00367F51 /* Frameworks */,
+				04D7C22D2E390F0C00367F51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				04D7C2312E390F0C00367F51 /* MorakebLiquidity */,
+			);
+			name = MorakebLiquidity;
+			packageProductDependencies = (
+				04D7C2A52E391DCA00367F51 /* SQLite */,
+			);
+			productName = MorakebLiquidity;
+			productReference = 04D7C22F2E390F0C00367F51 /* MorakebLiquidity.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04D7C23B2E390F0E00367F51 /* MorakebLiquidityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D7C2532E390F0E00367F51 /* Build configuration list for PBXNativeTarget "MorakebLiquidityTests" */;
+			buildPhases = (
+				04D7C2382E390F0E00367F51 /* Sources */,
+				04D7C2392E390F0E00367F51 /* Frameworks */,
+				04D7C23A2E390F0E00367F51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D7C23E2E390F0E00367F51 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				04D7C23F2E390F0E00367F51 /* MorakebLiquidityTests */,
+			);
+			name = MorakebLiquidityTests;
+			packageProductDependencies = (
+			);
+			productName = MorakebLiquidityTests;
+			productReference = 04D7C23C2E390F0E00367F51 /* MorakebLiquidityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04D7C2452E390F0E00367F51 /* MorakebLiquidityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D7C2562E390F0E00367F51 /* Build configuration list for PBXNativeTarget "MorakebLiquidityUITests" */;
+			buildPhases = (
+				04D7C2422E390F0E00367F51 /* Sources */,
+				04D7C2432E390F0E00367F51 /* Frameworks */,
+				04D7C2442E390F0E00367F51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D7C2482E390F0E00367F51 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				04D7C2492E390F0E00367F51 /* MorakebLiquidityUITests */,
+			);
+			name = MorakebLiquidityUITests;
+			packageProductDependencies = (
+			);
+			productName = MorakebLiquidityUITests;
+			productReference = 04D7C2462E390F0E00367F51 /* MorakebLiquidityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04D7C2272E390F0C00367F51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					04D7C22E2E390F0C00367F51 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					04D7C23B2E390F0E00367F51 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 04D7C22E2E390F0C00367F51;
+					};
+					04D7C2452E390F0E00367F51 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 04D7C22E2E390F0C00367F51;
+					};
+				};
+			};
+			buildConfigurationList = 04D7C22A2E390F0C00367F51 /* Build configuration list for PBXProject "MorakebLiquidity" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04D7C2262E390F0C00367F51;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				04D7C2A42E391DCA00367F51 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 04D7C2302E390F0C00367F51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04D7C22E2E390F0C00367F51 /* MorakebLiquidity */,
+				04D7C23B2E390F0E00367F51 /* MorakebLiquidityTests */,
+				04D7C2452E390F0E00367F51 /* MorakebLiquidityUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04D7C22D2E390F0C00367F51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7C23A2E390F0E00367F51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7C2442E390F0E00367F51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04D7C22B2E390F0C00367F51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D7C50B2E3AD36300367F51 /* AdvancedAnalyticsView.swift in Sources */,
+				04D7C50F2E3AD47100367F51 /* InteractiveScenariosView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7C2382E390F0E00367F51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7C2422E390F0E00367F51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04D7C23E2E390F0E00367F51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7C22E2E390F0C00367F51 /* MorakebLiquidity */;
+			targetProxy = 04D7C23D2E390F0E00367F51 /* PBXContainerItemProxy */;
+		};
+		04D7C2482E390F0E00367F51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7C22E2E390F0C00367F51 /* MorakebLiquidity */;
+			targetProxy = 04D7C2472E390F0E00367F51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		04D7C24E2E390F0E00367F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04D7C24F2E390F0E00367F51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04D7C2512E390F0E00367F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CW28J75Y88;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jhymaa.MorakebLiquidity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04D7C2522E390F0E00367F51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CW28J75Y88;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jhymaa.MorakebLiquidity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04D7C2542E390F0E00367F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jhymaa.MorakebLiquidityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorakebLiquidity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MorakebLiquidity";
+			};
+			name = Debug;
+		};
+		04D7C2552E390F0E00367F51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jhymaa.MorakebLiquidityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorakebLiquidity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MorakebLiquidity";
+			};
+			name = Release;
+		};
+		04D7C2572E390F0E00367F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jhymaa.MorakebLiquidityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MorakebLiquidity;
+			};
+			name = Debug;
+		};
+		04D7C2582E390F0E00367F51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jhymaa.MorakebLiquidityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MorakebLiquidity;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04D7C22A2E390F0C00367F51 /* Build configuration list for PBXProject "MorakebLiquidity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D7C24E2E390F0E00367F51 /* Debug */,
+				04D7C24F2E390F0E00367F51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D7C2502E390F0E00367F51 /* Build configuration list for PBXNativeTarget "MorakebLiquidity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D7C2512E390F0E00367F51 /* Debug */,
+				04D7C2522E390F0E00367F51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D7C2532E390F0E00367F51 /* Build configuration list for PBXNativeTarget "MorakebLiquidityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D7C2542E390F0E00367F51 /* Debug */,
+				04D7C2552E390F0E00367F51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D7C2562E390F0E00367F51 /* Build configuration list for PBXNativeTarget "MorakebLiquidityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D7C2572E390F0E00367F51 /* Debug */,
+				04D7C2582E390F0E00367F51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04D7C2A42E391DCA00367F51 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04D7C2A52E391DCA00367F51 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04D7C2A42E391DCA00367F51 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 04D7C2272E390F0C00367F51 /* Project object */;
+}
